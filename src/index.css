@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  font-family: 'Inter', 'PingFang SC', 'Microsoft YaHei', system-ui, sans-serif;
+  --primary-dark: #0f172a;
+  --primary-color: #6366f1;
+  --primary-light: #8b5cf6;
+  --accent-teal: #06d6a0;
+  --accent-amber: #fbbf24;
+  --neon-blue: #3b82f6;
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --bg-card: #1e293b;
+  --bg-elevated: #334155;
+}
+
+body {
+  @apply bg-background text-text-primary antialiased;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.design-container {
+  @apply container mx-auto;
+}
+
+.glass-panel {
+  @apply rounded-card bg-background-card/70 backdrop-blur-xl shadow-glass border border-white/5;
+}
+
+.neon-text {
+  @apply text-brand-primary drop-shadow-[0_0_12px_rgba(99,102,241,0.6)];
+}
+
+@layer base {
+  html {
+    @apply bg-background text-text-primary;
+  }
+
+  body {
+    @apply font-sans text-base leading-relaxed;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-heading text-text-primary;
+  }
+
+  p {
+    @apply text-text-secondary;
+  }
+
+  a {
+    @apply text-brand-primary transition duration-micro hover:text-brand-light focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary/60;
+  }
+
+  small {
+    @apply text-small text-text-secondary/80;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .gradient-text {
+    background: linear-gradient(90deg, #6366f1, #8b5cf6, #06d6a0);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .glass-effect {
+    background: rgba(30, 41, 59, 0.72);
+    backdrop-filter: blur(12px);
+  }
+
+  .animate-gradient {
+    background-size: 200% 200%;
+    animation: gradient-shift 3s ease infinite;
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 2.4s ease-in-out infinite;
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+}
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes pulse-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 8px rgba(99, 102, 241, 0.35);
+  }
+  50% {
+    box-shadow: 0 0 24px rgba(99, 102, 241, 0.65);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
