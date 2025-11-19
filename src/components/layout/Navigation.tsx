@@ -62,7 +62,7 @@ export function Navigation() {
             whileTap={{ scale: 0.96 }}
           >
             <img
-              src="/images/logo.png"
+              src={`${import.meta.env.BASE_URL}images/logo.png`}
               alt="MetaTinker Logo"
               className="h-12 w-auto object-contain"
             />

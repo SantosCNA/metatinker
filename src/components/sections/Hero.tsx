@@ -46,7 +46,7 @@ export function Hero() {
       id="home"
       className="relative flex min-h-[90vh] items-center justify-center overflow-hidden py-28"
       style={{
-        backgroundImage: 'url(/images/hero-bg.png)',
+        backgroundImage: `url(${import.meta.env.BASE_URL}images/hero-bg.png)`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',

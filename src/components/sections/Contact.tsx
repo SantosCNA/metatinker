@@ -122,7 +122,7 @@ export function ContactSection() {
               <p className="mt-2 text-sm text-text-secondary">{wechatSection.consultation.description}</p>
               <div className="mt-4 flex items-center justify-center rounded-xl border border-dashed border-brand-primary/40 bg-background-card/60 p-4">
                 <img
-                  src="/images/qisu-qrcode.jpg"
+                  src={`${import.meta.env.BASE_URL}images/qisu-qrcode.jpg`}
                   alt="七宿咨询微信二维码"
                   className="h-32 w-32 rounded-lg object-cover"
                 />
